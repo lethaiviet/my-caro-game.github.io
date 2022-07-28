@@ -1,0 +1,46 @@
+@import "./padding";
+
+@import "./variables";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "../pages/chat/components/styles";
+
+@import "../pages/lobby/styles";
+
+@import "../pages/game/styles";
+
+@import "../layouts/styles";
+
+#upload-avatar::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.font-round {
+  font-family: "Varela Round", sans-serif;
+}
+
+.full-screen-height {
+  height: $full-screen-without-header;
+}
+
+.american-purple-btn {
+  padding: 6px 12px;
+  text-decoration: none;
+  background-color: $american-purple;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+
+  &:hover,
+  &:focus {
+    background-color: white;
+    border: 1px solid $american-purple;
+    color: $american-purple;
+  }
+
+  &:disabled {
+    background-color: #52194a;
+    color: white;
+  }
+}

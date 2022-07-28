@@ -1,0 +1,182 @@
+@import "./variables.module";
+
+// $cell-size: 40px;
+$cell-size: Clamp(30px, calc(75vh / #{$num-of-rows-grid}), 50px);
+
+$cell-color: #1f3540;
+$background-color: #192a32;
+
+$X-color: #2ec4be;
+$width-line-X: calc(#{$cell-size} / 1.5);
+$height-line-X: calc(#{$cell-size} / 5.5);
+
+$O-color: #eeb338;
+$width-O: calc(#{$width-line-X} - #{$height-line-X} / 2);
+$border-size-O: $height-line-X;
+
+.board-game-10x20 {
+  display: grid;
+  grid-template-rows: repeat($num-of-rows-grid, $cell-size);
+  grid-template-columns: repeat($num-of-cols-grid, $cell-size);
+  gap: 5px;
+}
+
+.cell {
+  background-color: $cell-color;
+  border-radius: 5%;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-bar-board-game {
+  padding: 10px;
+  background-color: $background-color;
+  height: 80%;
+  width: 100%;
+}
+
+.X-symbol {
+  background: $X-color;
+  width: $width-line-X;
+  height: $height-line-X;
+  margin: 0px 0px;
+  border-radius: calc(#{$height-line-X} / 2);
+}
+
+.X-symbol:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.X-symbol:nth-child(2) {
+  transform: translate(-50%, calc(-50% - #{$height-line-X})) rotate(-45deg);
+}
+
+.O-symbol {
+  background: $background-color;
+  width: $width-O;
+  height: $width-O;
+  border-radius: 50% 50%;
+  border: $O-color solid $border-size-O;
+}
+
+.animation-highlight {
+  animation: changeColor 4s alternate infinite;
+}
+
+.center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.thumb-vertical {
+  position: relative;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: #d9dad5;
+}
+
+.track-vertical {
+  position: absolute;
+  width: 6px;
+  display: block !important;
+  right: 2px;
+  bottom: 2px;
+  top: 2px;
+  border-radius: 3px;
+}
+
+.thumb-horizontal {
+  position: relative;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: #d9dad5;
+}
+
+.track-horizontal {
+  position: absolute;
+  height: 6px;
+  display: block !important;
+  right: 2px;
+  left: 2px;
+  bottom: 2px;
+  border-radius: 3px;
+}
+
+.selected-card {
+  --border-width: 5px;
+  border-radius: 10px;
+  padding: 10px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #00416a, #e4e5e6);
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 5s alternate infinite;
+  }
+}
+
+.unSelected-card {
+  border: #00416a solid 1px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.pop-game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.315);
+}
+
+.pop-game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(118, 75, 146, 0.75);
+  height: 40%;
+  width: 100%;
+  opacity: 1;
+
+  color: aliceblue;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    border: 1px solid $background-color;
+  }
+  25% {
+    border: 1px solid rgba(255, 255, 0, 0.952);
+  }
+  75% {
+    border: 1px solid yellow;
+  }
+  100% {
+    border: 1px solid $background-color;
+  }
+}
