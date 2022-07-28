@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/my-caro-game.github.io/static/css/main.697c07df.css",
+    "main.js": "/my-caro-game.github.io/static/js/main.03fd101c.js",
+    "static/js/787.384508d8.chunk.js": "/my-caro-game.github.io/static/js/787.384508d8.chunk.js",
+    "static/media/no-rooms.png": "/my-caro-game.github.io/static/media/no-rooms.fcc9865431fcf0c4d217.png",
+    "static/media/play-rank.jpg": "/my-caro-game.github.io/static/media/play-rank.04880cc44041f4853168.jpg",
+    "static/media/500.webp": "/my-caro-game.github.io/static/media/500.9fa9e5e3531ce448e652.webp",
+    "static/media/mini-icon-game.png": "/my-caro-game.github.io/static/media/mini-icon-game.966b8ad4ea0da15e96c1.png",
+    "static/media/play-for-fun.jpg": "/my-caro-game.github.io/static/media/play-for-fun.f7d175aa39301a0a6821.jpg",
+    "static/media/404.webp": "/my-caro-game.github.io/static/media/404.1057b748800687dc64ed.webp",
+    "index.html": "/my-caro-game.github.io/index.html",
+    "main.697c07df.css.map": "/my-caro-game.github.io/static/css/main.697c07df.css.map",
+    "main.03fd101c.js.map": "/my-caro-game.github.io/static/js/main.03fd101c.js.map",
+    "787.384508d8.chunk.js.map": "/my-caro-game.github.io/static/js/787.384508d8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.697c07df.css",
+    "static/js/main.03fd101c.js"
+  ]
+}
